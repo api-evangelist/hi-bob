@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/reference/authorization
+docs: https://apidocs.hibob.com/docs/api-service-users
+summary:
+  types: [http, oauth2]
+  http_schemes: [basic]
+  oauth2_flows: [authorizationCode]
+  notes: >-
+    Direct API integrations authenticate with a service user (HTTP Basic). Approved
+    HiBob Marketplace / technology partners use OAuth 2.0 (authorization code +
+    refresh) scoped to endpoint-level permissions.
+schemes:
+- name: ServiceUserBasic
+  type: http
+  scheme: basic
+  description: >-
+    Token-based auth using an API "service user". Combine the service user ID and
+    token into a single "id:token" string, Base64-encode it, and send it as
+    "Authorization: Basic <encoded>". Service users are not tied to a real employee
+    and have no access by default — permissions are granted per category/field via a
+    permission group (view / edit / history + access rights on which employees).
+  docs: https://apidocs.hibob.com/docs/api-service-users
+- name: OAuth2
+  type: oauth2
+  description: >-
+    OAuth 2.0 for approved Marketplace / technology partners. Customers install the
+    app from the Bob Marketplace or a partner landing page; consent is granted in
+    HiBob and the partner receives client_id / client_secret plus access + refresh
+    tokens. Scopes map to specific endpoints (see scopes/hi-bob-scopes.yml).
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.app.hibob.com/
+    tokenUrl: https://auth.app.hibob.com/oauth2/v1/apps/token
+    refreshUrl: https://auth.app.hibob.com/oauth2/v1/apps/token
+  docs: https://apidocs.hibob.com/reference/oauth-20
+deprecated:
+- name: API Access Tokens
+  status: deprecated
+  replaced_by: ServiceUserBasic
+  docs: https://apidocs.hibob.com/docs/transition-from-api-access-tokens
