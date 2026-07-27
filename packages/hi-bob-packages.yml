@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+source: https://registry.npmjs.org/hibob
+note: >-
+  HiBob does not publish first-party client SDKs; the developer docs point to the
+  OpenAPI-per-page reference and llms.txt rather than official libraries. The npm
+  "hibob" package is a third-party Speakeasy-generated SDK, not first-party — recorded
+  here for completeness with official:false. No official SDKs pointer is emitted.
+packages:
+- language: javascript
+  registry: npm
+  name: hibob
+  url: https://www.npmjs.com/package/hibob
+  install: npm install hibob
+  official: false
+  source: https://github.com/speakeasy-sdks/hibob
+  note: Third-party Speakeasy-generated SDK, not published by HiBob.

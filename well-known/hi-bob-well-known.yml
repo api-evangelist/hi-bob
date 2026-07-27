@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: probed
+source: live probes of api.hibob.com / auth.app.hibob.com / www.hibob.com
+note: >-
+  No valid /.well-known/ documents were found. api.hibob.com returns HTTP 200 for
+  well-known paths but serves the customer-login single-page-app HTML (a catch-all),
+  not a real security.txt / openid-configuration / api-catalog. auth.app.hibob.com
+  returns 404 for OIDC discovery and www.hibob.com/.well-known/security.txt returns
+  403. Recorded as a negative result — no WellKnown/SecurityTxt pointer emitted.
+documents:
+- host: https://api.hibob.com
+  path: /.well-known/security.txt
+  status: 200
+  valid: false
+  reason: returns login SPA HTML, not RFC 9116 text
+- host: https://api.hibob.com
+  path: /.well-known/openid-configuration
+  status: 200
+  valid: false
+  reason: returns login SPA HTML, not OIDC discovery JSON
+- host: https://api.hibob.com
+  path: /.well-known/api-catalog
+  status: 200
+  valid: false
+  reason: returns login SPA HTML, not an API catalog
+- host: https://auth.app.hibob.com
+  path: /.well-known/openid-configuration
+  status: 404
+  valid: false
+- host: https://auth.app.hibob.com
+  path: /.well-known/oauth-authorization-server
+  status: 404
+  valid: false
+- host: https://www.hibob.com
+  path: /.well-known/security.txt
+  status: 403
+  valid: false

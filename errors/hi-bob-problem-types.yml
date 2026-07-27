@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/reference/error-handling
+format: custom-json
+note: >-
+  Bob's public APIs use standard HTTP status codes with a JSON error body. Two
+  envelope shapes appear across modules (not RFC 9457 application/problem+json).
+envelopes:
+- fields: [key, error, args]
+  example_field_meaning:
+    key: machine-readable error identifier (e.g. error.identifier)
+    error: human-readable description
+    args: contextual arguments
+- fields: [error, message, statusCode, timestamp]
+  example_field_meaning:
+    error: error code
+    message: human-readable description
+    statusCode: numeric HTTP status
+    timestamp: ISO-8601 time
+status_codes:
+- status: 200
+  title: OK
+  meaning: Successful request with response data.
+- status: 201
+  title: Created
+  meaning: Resource created successfully; includes object ID.
+- status: 204
+  title: No Content
+  meaning: Operation succeeded; no response body.
+- status: 304
+  title: Not Modified
+  meaning: Submitted data matches the current record.
+- status: 400
+  title: Bad Request
+  meaning: Invalid or malformed request. Do not retry.
+- status: 401
+  title: Unauthorized
+  meaning: Authentication failed.
+- status: 403
+  title: Forbidden
+  meaning: Insufficient permissions or missing scope.
+- status: 404
+  title: Not Found
+  meaning: Resource unavailable or module not activated.
+- status: 429
+  title: Too Many Requests
+  meaning: Rate limit exceeded. Retry using rate-limit headers.
+- status: 500
+  title: Internal Server Error
+  meaning: Server-side failure.

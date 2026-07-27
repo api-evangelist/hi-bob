@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://apidocs.hibob.com/docs/hibob-mcp-server
+server:
+  name: Bob MCP Server
+  vendor: HiBob
+  hosted: true
+  transport: http
+  url: null
+  note: >-
+    Official hosted Bob MCP Server that connects AI developer tools to Bob. Endpoint
+    URL and the full tool list are published in the Bob Help Center; setup docs are
+    linked from the developer docs. Two auth modes have shipped: service-user auth
+    (April 2026) and OAuth-based user access (June/July 2026 rollout, "expanded
+    tools").
+auth:
+- mode: service-user
+  released: '2026-04'
+- mode: oauth
+  released: '2026-07'
+  note: OAuth-based user access; easier and more secure connection for AI tools.
+docs: https://apidocs.hibob.com/docs/hibob-mcp-server
+changelog: https://apidocs.hibob.com/changelog/developer-docs-update-bob-mcp-server-now-uses-oauth

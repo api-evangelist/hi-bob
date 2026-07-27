@@ -1,0 +1,73 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/reference/scopes-mapping-to-endpoints
+docs: https://apidocs.hibob.com/reference/scopes-mapping-to-endpoints
+scheme: OAuth2
+authorizationUrl: https://auth.app.hibob.com/
+tokenUrl: https://auth.app.hibob.com/oauth2/v1/apps/token
+note: >-
+  OAuth 2.0 scopes for approved HiBob Marketplace / technology partners. Each scope
+  maps to a specific set of Public API endpoints (endpoint counts noted where the docs
+  state them). Service-user (Basic) integrations do not use scopes — they use
+  category/field permission groups instead.
+scopes:
+- scope: employee_data:read
+  description: View employee profiles and org data.
+- scope: employee_data:write
+  description: Manage employee profiles and org data.
+- scope: employee_data.history:read
+  description: View history of profiles and org chart.
+- scope: employee_data.sensitive:read
+  description: >-
+    View sensitive categories (EEO, Financial, Bands, Payroll, UK tax, Equity,
+    Identification, Analytics).
+- scope: employee_data.sensitive:write
+  description: >-
+    Manage sensitive data categories (EEO, Financial, Payroll, UK tax, Equity,
+    Identification).
+- scope: employee_data.sensitive.history:read
+  description: View history of sensitive categories (payroll history).
+- scope: company.metadata:read
+  description: View company fields and wizards.
+- scope: company.metadata:write
+  description: Manage company lists and employee fields.
+- scope: timeoff:read
+  description: View employee time off, balances, settings, and company calendar events.
+- scope: timeoff:write
+  description: Manage employee time off balances and requests; fetch company calendar events.
+- scope: timeoff.sensitive:read
+  description: View private time off policy data.
+- scope: attendance:write
+  description: Manage attendance sheets and balances.
+- scope: tasks:write
+  description: View and update employee tasks.
+- scope: documents:read
+  description: View requests and eSign status reports.
+- scope: documents:write
+  description: Manage folders, requests, and eSign workflows.
+- scope: goals:read
+  description: View personal, team, and company goals.
+- scope: goals:write
+  description: Create, edit, and check in employee, team, and company goals.
+- scope: reports:read
+  description: Access and download reports.
+- scope: hiring:write
+  description: >-
+    Search and read hiring data (job ads, openings, candidates, applications,
+    interviews, evaluations, offers).
+- scope: job_catalog:read
+  description: View jobs and associated competencies.
+- scope: learning.integrations:write
+  description: Create, update, and delete learning integrations.
+- scope: projects:write
+  description: Create and manage projects.
+- scope: workforce_planning:read
+  description: View positions, hierarchy, and budget data.
+- scope: workforce_planning:write
+  description: Manage positions, budgets, events, and hiring plans.
+- scope: payrollhub.employee_sync:write
+  description: Fetch employee data and perform payroll syncs.
+- scope: payrollhub.payroll:read
+  description: Fetch pay cycle metadata, paystub information, and payroll-related data.
+- scope: payrollhub.deductions:write
+  description: Fetch and update employee-level 401(k) deductions.

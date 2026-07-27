@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/reference/getting-started-with-bob-api
+authentication:
+  style: http-basic-service-user
+  oauth2: true
+  docs: https://apidocs.hibob.com/reference/authorization
+  ref: authentication/hi-bob-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    Bob does not document an idempotency-key mechanism. Update endpoints (e.g.
+    PUT /people/{id}) behave like PATCH — only sent fields change — but there is no
+    published idempotency contract.
+pagination:
+  style: cursor
+  note: >-
+    Cursor-based pagination on some collection endpoints. Note the People read
+    endpoints (POST /people/search, POST /people/{identifier}) return the full result
+    set and are NOT paginated.
+  docs: https://apidocs.hibob.com/reference/pagination-1
+field_identifiers:
+  request_form: dot-notation
+  response_form: slash-notation
+  note: >-
+    Request field IDs use dot notation (e.g. root.id) from Fields metadata; response
+    field keys use slash notation (e.g. /root/id). Fields without permission or with
+    invalid IDs are silently omitted (200 OK, no warning).
+  docs: https://apidocs.hibob.com/docs/fields-metadata
+read_after_update_consistency:
+  note: >-
+    After an update, a follow-up read may return the previous value or null for up to
+    ~20 seconds. Wait before reading back.
+  docs: https://apidocs.hibob.com/docs/people-read-api-contract
+versioning:
+  scheme: uri-path
+  current: v1
+  note: Version is carried in the path (https://api.hibob.com/v1/...).
+  ref: lifecycle/hi-bob-lifecycle.yml
+rate_limit_signaling:
+  headers: [X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After]
+  status_on_exceed: 429
+  ref: rate-limits/hi-bob-rate-limits.yml
+  docs: https://apidocs.hibob.com/reference/rate-limiting
+error_envelope:
+  formats:
+  - keys: [key, error, args]
+  - keys: [error, message, statusCode, timestamp]
+  note: >-
+    Two envelope shapes are used across modules. Not RFC 9457 (no
+    application/problem+json).
+  ref: errors/hi-bob-problem-types.yml
+  docs: https://apidocs.hibob.com/reference/error-handling
+webhooks:
+  version: v2
+  signature_header: Bob-Signature
+  signature_algorithm: HMAC-SHA512
+  ref: asyncapi/hi-bob-webhooks.yml
+  docs: https://apidocs.hibob.com/reference/getting-started-webhooks

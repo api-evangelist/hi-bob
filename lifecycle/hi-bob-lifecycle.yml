@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/
+versioning:
+  scheme: uri-path
+  current: v1
+  note: Version carried in the request path (https://api.hibob.com/v1/...).
+deprecation:
+  policy: >-
+    Bob maintains legacy surfaces alongside newer versions and publishes migration
+    guides. API Access Tokens are deprecated in favor of service users, and Webhooks
+    v1 is legacy with a migration path to Webhooks v2.
+  migrations:
+  - from: API Access Tokens
+    to: Service Users
+    docs: https://apidocs.hibob.com/docs/transition-from-api-access-tokens
+  - from: Webhooks v1
+    to: Webhooks v2
+    docs: https://apidocs.hibob.com/docs/migrate-to-webhooks-v2
+status_page: https://hibob.statuspage.io/
+changelog: https://apidocs.hibob.com/changelog.rss

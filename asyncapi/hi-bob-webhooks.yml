@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/reference/getting-started-webhooks
+type: Webhooks
+spec_type: none
+note: >-
+  Bob documents Webhooks v2 (a webhook event surface) but publishes no AsyncAPI
+  document. This artifact captures the webhook catalog and delivery/signing contract.
+transport: https-post
+version: v2
+signing:
+  header: Bob-Signature
+  algorithm: HMAC-SHA512
+  note: Requests are signed with HMAC SHA-512 over the payload using a shared secret token.
+delivery:
+  connection_test: ping
+  retry: exponential backoff for up to 3 days
+  retry_notifications_hours: [1, 24, 48, 72]
+  deactivation: After three consecutive failed days the webhook is deactivated.
+  event_retention: Events are saved for at least two working days for recovery.
+payload_fields:
+- version
+- type
+- triggeredBy
+- triggeredAt
+- data
+event_families:
+- name: Employee events
+  docs: https://apidocs.hibob.com/reference/getting-started-webhooks
+- name: Time off events
+  docs: https://apidocs.hibob.com/reference/getting-started-webhooks
+- name: Task events
+  docs: https://apidocs.hibob.com/reference/getting-started-webhooks
+- name: Docs events
+  docs: https://apidocs.hibob.com/reference/getting-started-webhooks
+- name: Workforce planning events
+  docs: https://apidocs.hibob.com/reference/getting-started-webhooks
+legacy:
+  v1: https://apidocs.hibob.com/reference/webhook-events-v1
+  migration: https://apidocs.hibob.com/docs/migrate-to-webhooks-v2

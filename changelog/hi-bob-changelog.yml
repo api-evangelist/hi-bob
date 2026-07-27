@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/changelog.rss
+scheme: dated-rss
+feed: https://apidocs.hibob.com/changelog.rss
+current_version: v1
+entries:
+- date: '2026-07-15'
+  type: improved
+  title: 'Time Off API: policyTypeCustomName on get request details'
+  breaking: false
+- date: '2026-07-01'
+  type: added
+  title: 'Bob MCP Server: now uses OAuth with expanded tools'
+  breaking: false
+- date: '2026-06-16'
+  type: added
+  title: 'Goals API: startValue added to key results'
+  breaking: false
+- date: '2026-05-20'
+  type: added
+  title: 'Hiring API: additional endpoints'
+  breaking: false
+- date: '2026-05-19'
+  type: added
+  title: 'Time Off API: access calendar events'
+  breaking: false
+- date: '2026-05-05'
+  type: fixed
+  title: 'Employee data webhooks: table entry events payload updated'
+  breaking: false
+- date: '2026-04-29'
+  type: added
+  title: 'Learning API: add your own learning content'
+  breaking: false
+- date: '2026-04-28'
+  type: added
+  title: 'Attendance API: new field specialRateEligibleHours'
+  breaking: false

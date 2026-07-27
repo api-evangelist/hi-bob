@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://apidocs.hibob.com/reference/rate-limiting
+scope: per-endpoint per-minute
+status_on_exceed: 429
+headers:
+- name: X-RateLimit-Limit
+  description: Total number of requests allowed within the time window.
+- name: X-RateLimit-Remaining
+  description: Requests remaining in the current window.
+- name: X-RateLimit-Reset
+  description: When the window resets, in Unix epoch time.
+- name: Retry-After
+  description: Returned on 429 responses indicating when to retry.
+rate_limits:
+- endpoint: POST /v1/people/search
+  limit_count: 50
+  interval: minute
+  description: 50 requests per minute for the employee search endpoint.
+note: >-
+  Limits are applied per endpoint and per minute; the docs publish the People search
+  limit (50/min) as the worked example and direct integrators to each API category
+  page for its specific limit. 429 responses should be retried using the rate-limit
+  headers.

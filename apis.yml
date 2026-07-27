@@ -1,7 +1,18 @@
 aid: hi-bob
 name: Hi Bob
-description: Hi Bob is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  HiBob (bob) is an all-in-one HR platform that connects people management, payroll,
+  benefits, and finance for modern, mid-sized and multinational companies. Bob's Public
+  API gives developers programmatic access to core HR data and workflows — employee
+  profiles and org data, time off and attendance, tasks, documents and eSign, goals,
+  job catalog, hiring/ATS, learning, and workforce planning — over a versioned REST
+  API at https://api.hibob.com/v1. Authentication is token-based via API "service
+  users" (HTTP Basic with a service-user ID and token) with granular category and
+  field permissions, plus OAuth 2.0 (authorization code + refresh) for approved
+  Marketplace partners scoped to endpoint-level permissions. The API offers cursor-based
+  pagination, rate limiting with X-RateLimit-* headers, HMAC-signed Webhooks v2 for
+  event notifications, an official hosted Bob MCP Server for AI tools, and a published
+  llms.txt index of the developer docs.
 url: https://raw.githubusercontent.com/api-evangelist/hi-bob/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +20,123 @@ x-backed-by:
 - battery-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://images.hibob.com/favicon/bob.svg
 tags:
 - Company
-apis: []
+- HR
+- HRIS
+- Human Resources
+- Payroll
+- People Analytics
+- Time Off
+- Workforce Planning
+- Employees
+- HR Tech
+apis:
+- name: Bob Public API
+  description: >-
+    Bob's Public API for HR data and workflows — employee data, time off, attendance,
+    tasks, documents/eSign, goals, job catalog, hiring, learning, and workforce planning.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - HR
+  - HRIS
+  - Employees
+  properties:
+  - type: Documentation
+    url: https://apidocs.hibob.com/docs/getting-started
+  - type: APIReference
+    url: https://apidocs.hibob.com/reference/getting-started-with-bob-api
+  - type: Authentication
+    url: authentication/hi-bob-authentication.yml
+  - type: OAuthScopes
+    url: scopes/hi-bob-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DeveloperPortal
+  url: https://apidocs.hibob.com/
+- type: Documentation
+  url: https://apidocs.hibob.com/docs/getting-started
+- type: APIReference
+  url: https://apidocs.hibob.com/reference/getting-started-with-bob-api
+- type: GettingStarted
+  url: https://apidocs.hibob.com/docs/getting-started
+- type: Authentication
+  url: authentication/hi-bob-authentication.yml
+- type: OAuthScopes
+  url: scopes/hi-bob-scopes.yml
+- type: Blog
+  url: https://www.hibob.com/blog/
+- type: Support
+  url: https://community.hibob.com/
+- type: Pricing
+  url: https://www.hibob.com/pricing-plans/
+- type: SignUp
+  url: https://app.hibob.com
+- type: Login
+  url: https://app.hibob.com
+- type: TermsOfService
+  url: https://www.hibob.com/terms/
+- type: PrivacyPolicy
+  url: https://www.hibob.com/privacy-policy/
+- type: StatusPage
+  url: https://hibob.statuspage.io/
+- type: ChangeLog
+  url: changelog/hi-bob-changelog.yml
+- type: Lifecycle
+  url: lifecycle/hi-bob-lifecycle.yml
+- type: Deprecation
+  url: https://apidocs.hibob.com/docs/transition-from-api-access-tokens
+- type: MCPServer
+  url: mcp/hi-bob-mcp.yml
+- type: LLMsTxt
+  url: llms/hi-bob-llms.txt
+- type: Webhooks
+  url: asyncapi/hi-bob-webhooks.yml
+- type: ErrorCatalog
+  url: errors/hi-bob-problem-types.yml
+- type: Conventions
+  url: conventions/hi-bob-conventions.yml
+- type: RateLimits
+  url: rate-limits/hi-bob-rate-limits.yml
+- type: Conformance
+  url: conformance/hi-bob-conformance.yml
+- type: Compliance
+  url: https://www.hibob.com/privacy/security/
+- type: TrustCenter
+  url: https://www.hibob.com/privacy/security/
+- type: Security
+  url: https://www.hibob.com/privacy/security/
+- type: VulnerabilityDisclosure
+  url: security/hi-bob-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/hi-bob-domain-security.yml
+- type: Packages
+  url: packages/hi-bob-packages.yml
+- type: Marketplace
+  url: https://www.hibob.com/marketplace
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
