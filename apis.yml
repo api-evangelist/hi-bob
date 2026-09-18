@@ -49,6 +49,15 @@ modified: '2026-07-19'
 image: https://images.hibob.com/favicon/bob.svg
 tags:
 - Company
+- Human Resources
+- HRIS
+- Payroll
+- People Analytics
+- Time Off
+- Workforce Planning
+- Employees
+tags_raw:
+- Company
 - HR
 - HRIS
 - Human Resources
@@ -66,6 +75,10 @@ apis:
   humanURL: https://apidocs.hibob.com/
   baseURL: https://api.hibob.com/v1
   tags:
+  - Human Resources
+  - HRIS
+  - Employees
+  tags_raw:
   - HR
   - HRIS
   - Employees
